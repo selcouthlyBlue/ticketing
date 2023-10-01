@@ -5,7 +5,7 @@ export default function buildClient({ req }) {
   if (isInServer) {
     return axios.create({
       baseURL:
-        "http://ticketverse.shop",
+        "http://www.ticketverse.shop",
       headers: req.headers,
     });
   }
