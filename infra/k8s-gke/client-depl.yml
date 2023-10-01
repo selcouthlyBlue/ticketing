@@ -1,23 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-depl
+  name: client-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth
+      app: client
   template:
     metadata:
       labels:
-        app: auth
+        app: client
     spec:
       containers:
-        - name: auth
-          image: jeromegonzalvo/auth
+        - name: client
+          image: us.gcr.io/ticketing-dev-395510/client
           env:
-            - name: MONGO_URI
-              value: 'mongodb://auth-mongo-srv:27017/auth'
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
@@ -27,12 +25,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-srv
+  name: client-srv
 spec:
   selector:
-    app: auth
+    app: client
   ports:
-    - name: auth
+    - name: client
       protocol: TCP
       port: 3000
       targetPort: 3000

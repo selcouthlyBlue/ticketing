@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: us.gcr.io/ticketing-dev-395510/client
+          image: jeromegonzalvo/client
           env:
             - name: JWT_KEY
               valueFrom:
