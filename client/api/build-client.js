@@ -5,7 +5,7 @@ export default function buildClient({ req }) {
   if (isInServer) {
     return axios.create({
       baseURL:
-        "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local",
+        "https://ticketverse.shop",
       headers: req.headers,
     });
   }
