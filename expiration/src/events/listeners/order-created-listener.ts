@@ -7,7 +7,7 @@ import { Message } from "node-nats-streaming";
 import { queueGroupName } from "./queue-group-name";
 import { expirationQueue } from "../../queues/expiration-queue";
 
-export class OrderCreatedListner extends Listener<OrderCreatedEvent> {
+export class OrderCreatedListener extends Listener<OrderCreatedEvent> {
   subject: Subjects.ORDER_CREATED = Subjects.ORDER_CREATED;
   queueGroupName: string = queueGroupName;
 
