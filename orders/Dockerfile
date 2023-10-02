@@ -2,7 +2,12 @@ FROM node:alpine
 
 WORKDIR /app
 COPY package.json .
-RUN npm install --omit=dev
+COPY package-lock.json .
+RUN npm ci
+COPY . .
+RUN npm run build
 COPY . .
 
-CMD ["npm", "start"]
+EXPOSE 3000
+
+CMD ["node", "build/index.js"]
