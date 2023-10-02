@@ -22,7 +22,7 @@ export default function Header({ currentUser }) {
     <nav className="navbar navbar-light bg-light">
       <div className="container">
         <Link className="navbar-brand" href="/">
-          Ticket Odyssey
+          Ticketverse
         </Link>
         <div className="d-flex justify-content-end">
           <ul className="nav d-flex align-items-center">{links}</ul>
